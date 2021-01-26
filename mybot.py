@@ -3,12 +3,7 @@ import time
 bot = telebot.TeleBot('1560128117:AAFY7IVAXOY1GeiprDjnilhTEzLF5JWoqc0')
 admin_list = (6226398672, 6226398671)
 msg = ('Принял','принял','ПРИНЯЛ')
-
-@bot.message_handler(content_types=["new_chat_members"])
-def handler_new_member(message):
-    user_name = message.new_chat_member.first_name
-    bot.send_message(message.chat.id, "Добро пожаловать, {0}, /nОзнакомьтесь с правилами группы!".format(user_name))
-    
+ 
 @bot.message_handler(content_types=['text'])
 def handler_test(message):
     if not message.from_user.id in admin_list:
